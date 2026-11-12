@@ -14,6 +14,17 @@ function loadScript(src) {
   });
 }
 
+// Polices du PDF chargées seulement au moment de générer un PDF (l'appli reste légère).
+function loadPdfFonts() {
+  const href = "https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Pacifico&family=Roboto+Condensed:wght@400;500;700&display=swap";
+  if (document.querySelector(`link[href="${href}"]`)) return Promise.resolve();
+  return new Promise((res) => {
+    const l = document.createElement("link");
+    l.rel = "stylesheet"; l.href = href; l.onload = res; l.onerror = res;
+    document.head.appendChild(l);
+  });
+}
+
 function mixWhite(hex, t) {
   const m = /^#?([0-9a-f]{6})$/i.exec(hex || "");
   if (!m) return "#b9c3f7";
@@ -65,6 +76,8 @@ export async function makePdf(w, c) {
     <div class="bar"><div class="left"><span id="pdf-msg" class="hint"></span></div><div class="right"><button class="btn ghost" data-close="1" type="button">Fermer</button><a class="btn primary disabled" id="pdf-dl" aria-disabled="true">Télécharger le PDF</a></div></div>`, true);
   try {
     for (const l of LIBS) await loadScript(l);
+    await loadPdfFonts();
+    await Promise.all(["700 20px Oswald", "20px Pacifico", "400 20px 'Roboto Condensed'"].map((f) => document.fonts.load(f).catch(() => {})));
     await document.fonts.ready;
     const stage = $("#pdf-stage");
     stage.innerHTML = pdfPages(w, c).join("");

@@ -247,6 +247,7 @@ export function sparkCard(s) {
 
 /* ---------- interface ---------- */
 export function toast(msg) {
+  document.querySelectorAll(".toast").forEach((x) => x.remove());
   const t = document.createElement("div");
   t.className = "toast";
   t.setAttribute("role", "status");

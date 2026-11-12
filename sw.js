@@ -1,6 +1,6 @@
 // Service worker : rend l'appli installable et rapide à ouvrir.
 // Les données (Supabase) passent toujours par le réseau.
-const VERSION = "coach-v2";
+const VERSION = "coach-v3";
 const SHELL = [
   "./", "index.html", "styles.css", "config.js", "manifest.webmanifest",
   "js/app.js", "js/core.js", "js/db.js", "js/client.js", "js/coach.js", "js/pdf.js", "js/templates.js",

@@ -558,12 +558,12 @@ function openSettings() {
     <label for="st-max">Hausse max par semaine</label><div><input class="field num inl" id="st-max" value="${esc(s.maxJump)}"> %</div>
     <label for="st-fat">Fatigue</label><label class="plain"><input type="checkbox" id="st-fat" ${s.fatigueRule ? "checked" : ""}> Si énergie ou état nerveux ≤ 2/5, garder 1 rep de réserve en plus</label>
   </div>
-  <h4>Apparence et PDF</h4>
+  <h4>Nom de l'appli et PDF</h4>
   <div class="form">
     <label for="st-app">Nom de l'appli</label><input class="field" id="st-app" value="${esc(s.appName)}">
     <label for="st-brand">Titre de couverture du PDF</label><input class="field" id="st-brand" value="${esc(s.brand)}">
     <label for="st-coach">Signature (bas de page)</label><input class="field" id="st-coach" value="${esc(s.coach)}" placeholder="ex. Ton nom · Coaching">
-    <label for="st-acc">Couleur principale</label><input type="color" id="st-acc" value="${esc(s.accent)}">
+    <label for="st-acc">Couleur du PDF</label><input type="color" id="st-acc" value="${esc(s.accent)}">
     <label for="st-rem">Remarque (couverture et séance 1)</label><textarea class="field" id="st-rem" rows="3">${esc(s.remarque)}</textarea>
   </div>
   <div class="bar"><div class="left"></div><div class="right"><button class="btn ghost" data-close="1" type="button">Annuler</button><button class="btn primary" id="st-save" type="button">Enregistrer</button></div></div>`, true);
