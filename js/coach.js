@@ -7,6 +7,17 @@ import {
 } from "./core.js";
 import { makePdf } from "./pdf.js";
 import { TEMPLATES } from "./templates.js";
+import { LIBRARY } from "./library.js";
+
+const TECHNIQUES = [
+  "avec 1 seconde en haut", "avec 1 seconde en bas", "avec pic de contraction", "avec 2 secondes de descente", "avec 3 secondes de descente",
+  "tempo 3/2/1 (3 s de descente, 2 s d'isométrie en bas)", "en tension continue", "tenu 2 secondes en bas à chaque répétition",
+  "en rest-pause 6/4/2 (quelques secondes de récupération entre chaque)", "+ 6 répétitions partielles en position étirée",
+  "+ 6 répétitions partielles basses", "en myo-reps : 6/6/5/5 toutes les 30 secondes", "+ 20 secondes de repos + répétitions max",
+  "+ 6 secondes d'isométrie en fin de série", "en amplitude complète", "par bras", "par jambe", "par côté",
+];
+const RESTS = ["1 min", "1 min 30", "1 min 40 à 2 min", "2 min", "2 min 30", "3 min", "3 min 30"];
+const LIB_BY_NAME = new Map(LIBRARY.map((e) => [e.n, e]));
 
 const S = { el: null, session: null, clients: [], cur: null, weeks: [], fb: {}, curWeek: null, viewCycle: null, tab: "programme", overrides: {}, saving: {} };
 const timers = {};
@@ -23,7 +34,10 @@ export async function startCoach(el, session) {
         <button class="btn ghost" data-act="logout" type="button">Se déconnecter</button>
       </div>
     </aside>
-    <main id="main"></main></div>`;
+    <main id="main"></main></div>
+    <datalist id="dl-ex">${LIBRARY.map((e) => `<option value="${esc(e.n)}">${esc(e.g)}</option>`).join("")}</datalist>
+    <datalist id="dl-tech">${TECHNIQUES.map((t) => `<option value="${esc(t)}"></option>`).join("")}</datalist>
+    <datalist id="dl-rest">${RESTS.map((t) => `<option value="${esc(t)}"></option>`).join("")}</datalist>`;
   el.addEventListener("click", onClick);
   el.addEventListener("input", onInput);
   el.addEventListener("change", onChange);
@@ -190,7 +204,7 @@ function renderEx(ex, si, ei) {
       <span class="x">@</span>
       <input class="field num" id="g-l-${id}" data-bind="${gp}.load" data-type="num" value="${esc(fmt(g.load))}" aria-label="Charge" title="Charge" ${g.unit === "" ? "disabled" : ""}>
       <select class="field" id="g-u-${id}" data-bind="${gp}.unit" data-rerender="1" aria-label="Unité">${UNITS.map((u) => `<option value="${esc(u)}" ${u === (g.unit ?? "kg") ? "selected" : ""}>${esc(UNIT_LABEL[u])}</option>`).join("")}</select>
-      <input class="field note" id="g-n-${id}" data-bind="${gp}.note" value="${esc(g.note)}" placeholder="technique (ex. avec 1 seconde en haut)" aria-label="Consigne">
+      <input class="field note" id="g-n-${id}" data-bind="${gp}.note" list="dl-tech" value="${esc(g.note)}" placeholder="technique : choisis ou écris" aria-label="Consigne">
       <span class="gact"><button class="btn ghost small" data-act="drop" data-si="${si}" data-ei="${ei}" data-gi="${gi}" type="button">${g.drop ? "− enchaînement" : "+ enchaînement"}</button>${ex.sets.length > 1 ? `<button class="btn ghost small danger" data-act="g-del" data-si="${si}" data-ei="${ei}" data-gi="${gi}" title="Retirer ce bloc" type="button">✕</button>` : ""}</span>
       ${g.drop ? `<div class="drop"><span>+</span><input class="field num" id="d-r-${id}" data-bind="${gp}.drop.reps" value="${esc(g.drop.reps)}" aria-label="Répétitions enchaînées"><span>@</span><input class="field num" id="d-l-${id}" data-bind="${gp}.drop.load" data-type="num" value="${esc(fmt(g.drop.load))}" aria-label="Charge enchaînée"><select class="field" id="d-u-${id}" data-bind="${gp}.drop.unit" aria-label="Unité">${UNITS.map((u) => `<option value="${esc(u)}" ${u === (g.drop.unit ?? g.unit) ? "selected" : ""}>${esc(UNIT_LABEL[u])}</option>`).join("")}</select><input class="field" id="d-n-${id}" data-bind="${gp}.drop.note" value="${esc(g.drop.note)}" placeholder="ex. en moins lourd"></div>` : ""}
     </div>`;
@@ -198,7 +212,7 @@ function renderEx(ex, si, ei) {
   return `<div class="ex">
     <button class="thumb ${img ? "has" : ""}" style="${img ? `background-image:url('${esc(img)}')` : ""}" data-act="img" data-si="${si}" data-ei="${ei}" aria-label="Choisir l'illustration" type="button">${img ? "" : "+ image"}</button>
     <div class="ex-main">
-      <div class="ex-top"><span class="ex-idx">${ei + 1}</span><input class="field title" id="ex-n-${si}-${ei}" data-bind="${p}.name" value="${esc(ex.name)}" aria-label="Nom de l'exercice"><input class="field rest" id="ex-r-${si}-${ei}" data-bind="${p}.rest" value="${esc(ex.rest)}" aria-label="Repos" placeholder="repos"></div>
+      <div class="ex-top"><span class="ex-idx">${ei + 1}</span><input class="field title" id="ex-n-${si}-${ei}" data-bind="${p}.name" list="dl-ex" autocomplete="off" value="${esc(ex.name)}" aria-label="Nom de l'exercice" placeholder="Tape pour chercher dans la bibliothèque"><input class="field rest" id="ex-r-${si}-${ei}" data-bind="${p}.rest" list="dl-rest" value="${esc(ex.rest)}" aria-label="Repos" placeholder="repos"></div>
       <div class="groups">${groups}</div>
       <div><button class="btn ghost small" data-act="g-add" data-si="${si}" data-ei="${ei}" type="button">+ bloc de séries</button></div>
       <div class="preview-line" data-preview="${si}-${ei}">${esc(groupLines(ex).join(" · "))}</div>
@@ -389,6 +403,19 @@ function onChange(e) {
     S.curWeek = ws.length ? ws[ws.length - 1].id : null;
     renderMain(); return;
   }
+  if (t.dataset.bind && /exercises\.\d+\.name$/.test(t.dataset.bind)) {
+    const w = week();
+    const ex = getPath(w, t.dataset.bind.replace(/\.name$/, ""));
+    const v = t.value.trim().toUpperCase();
+    const hit = LIB_BY_NAME.get(v);
+    if (ex) {
+      ex.name = v;
+      if (hit && (!ex.img || ex.img.startsWith("ill/lib/"))) ex.img = hit.img;
+      saveWeek(w.id, 100);
+      renderMain();
+    }
+    return;
+  }
   if (t.dataset.bind && t.dataset.rerender) renderMain();
   if (t.dataset.client && t.tagName === "SELECT") { saveClient({ [t.dataset.client]: parseInt(t.value, 10) }).then(render); }
 }
@@ -445,12 +472,24 @@ async function deleteWeek() {
 
 /* ---------- modales ---------- */
 function openImagePicker(si, ei) {
-  const lib = [...new Set([...Object.keys(store.images), ...TEMPLATES.flatMap((t) => t.seances.flatMap((se) => se.exercises.map((ex) => ex.img).filter(Boolean)))])];
+  const own = Object.keys(store.images);
+  const tpl = [...new Set(TEMPLATES.flatMap((t) => t.seances.flatMap((se) => se.exercises.map((ex) => ex.img).filter(Boolean))))];
+  const groups = [...new Set(LIBRARY.map((e) => e.g))];
+  const tile = (id, label) => `<button data-img="${esc(id)}" data-label="${esc((label || "").toLowerCase())}" type="button" title="${esc(label || "")}"><img src="${esc(imgSrc(id))}" alt="" loading="lazy"><span>${esc(label || "")}</span></button>`;
   const m = openModal(`<h3>Illustration de l'exercice</h3>
     <div class="bar"><div class="left"><button class="btn primary" id="up-img" type="button">Importer une image</button><button class="btn" id="no-img" type="button">Sans image</button></div><div class="right"><button class="btn ghost" data-close="1" type="button">Fermer</button></div></div>
-    <p class="hint">Ou choisis une illustration existante :</p>
-    <div class="lib">${lib.map((id) => `<button data-img="${esc(id)}" style="background-image:url('${esc(imgSrc(id))}')" aria-label="${esc(store.images[id]?.name || "illustration")}" type="button"></button>`).join("")}</div>
+    <input class="field" id="lib-q" placeholder="Rechercher un exercice (ex. tirage, curl, fente…)" autocomplete="off">
+    <div class="lib-scroll">
+      ${own.length ? `<h4>Tes images</h4><div class="lib">${own.map((id) => tile(id, store.images[id].name)).join("")}</div>` : ""}
+      ${groups.map((g) => `<h4 data-group>${esc(g)}</h4><div class="lib">${LIBRARY.filter((e) => e.g === g).map((e) => tile(e.img, e.n)).join("")}</div>`).join("")}
+      <h4>Programme modèle</h4><div class="lib">${tpl.map((id) => tile(id, "")).join("")}</div>
+    </div>
     <input type="file" id="file" accept="image/*" hidden>`, true);
+  $("#lib-q", m).oninput = (ev) => {
+    const q = ev.target.value.trim().toLowerCase();
+    $$(".lib button", m).forEach((b) => { b.hidden = !!q && !b.dataset.label.includes(q); });
+    $$(".lib", m).forEach((l) => { const h = l.previousElementSibling; const any = [...l.children].some((b) => !b.hidden); l.hidden = !any; if (h) h.hidden = !any; });
+  };
   const w = week();
   const ex = w.seances[si].exercises[ei];
   const set = (id) => { ex.img = id; saveWeek(w.id, 100); closeModal(); renderMain(); };
