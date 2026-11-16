@@ -722,11 +722,11 @@ export const TEMPLATES = [
   },
   {
     id: "fullbody3",
-    name: "Full body 3 séances (lourde, modérée, légère)",
+    name: "Full body 3 séances (hypertrophie)",
     seances: [
       {
         "id": "se-fb1",
-        "title": "FULL BODY A · LOURDE",
+        "title": "FULL BODY A",
         "warmup": "5 min de rameur (ne te crame pas)",
         "exercises": [
           {
@@ -736,14 +736,14 @@ export const TEMPLATES = [
             "sets": [
               {
                 "count": 2,
-                "reps": 6,
+                "reps": 8,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 2 secondes de descente"
               },
               {
                 "count": 2,
-                "reps": 8,
+                "reps": 11,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -753,19 +753,19 @@ export const TEMPLATES = [
           },
           {
             "name": "DÉVELOPPÉ COUCHÉ BARRE LIBRE",
-            "rest": "3 min",
+            "rest": "2 min 30",
             "img": "ill/lib/091.jpg",
             "sets": [
               {
                 "count": 2,
-                "reps": 6,
+                "reps": 8,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 1 seconde en bas"
               },
               {
                 "count": 2,
-                "reps": 8,
+                "reps": 11,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -779,11 +779,18 @@ export const TEMPLATES = [
             "img": "ill/lib/040.jpg",
             "sets": [
               {
-                "count": 3,
-                "reps": 6,
+                "count": 2,
+                "reps": 8,
                 "load": null,
                 "unit": "+kg",
-                "note": "(ajoute du lest si tu dépasses 8 répétitions au poids du corps)"
+                "note": "(ajoute du lest si tu dépasses 10 répétitions au poids du corps)"
+              },
+              {
+                "count": 1,
+                "reps": "max",
+                "load": null,
+                "unit": "",
+                "note": "au poids du corps"
               }
             ],
             "id": "ex-fb13"
@@ -794,30 +801,37 @@ export const TEMPLATES = [
             "img": null,
             "sets": [
               {
-                "count": 3,
-                "reps": 8,
+                "count": 2,
+                "reps": 10,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 3 secondes de descente, dos neutre"
+              },
+              {
+                "count": 1,
+                "reps": 12,
+                "load": null,
+                "unit": "kg",
+                "note": ""
               }
             ],
             "id": "ex-fb14"
           },
           {
             "name": "ROWING GUIDÉ POITRINE APPUYÉE",
-            "rest": "2 min 30",
+            "rest": "2 min",
             "img": "ill/lib/188.jpg",
             "sets": [
               {
                 "count": 2,
-                "reps": 8,
+                "reps": 10,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 1 seconde en haut"
               },
               {
                 "count": 1,
-                "reps": 10,
+                "reps": 13,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -832,14 +846,14 @@ export const TEMPLATES = [
             "sets": [
               {
                 "count": 2,
-                "reps": 6,
+                "reps": 8,
                 "load": null,
                 "unit": "kg",
                 "note": ""
               },
               {
                 "count": 1,
-                "reps": 8,
+                "reps": 11,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -854,14 +868,14 @@ export const TEMPLATES = [
             "sets": [
               {
                 "count": 2,
-                "reps": 8,
+                "reps": 9,
                 "load": null,
                 "unit": "kg",
                 "note": "avec descente contrôlée"
               },
               {
                 "count": 1,
-                "reps": 10,
+                "reps": 12,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -876,7 +890,7 @@ export const TEMPLATES = [
             "sets": [
               {
                 "count": 3,
-                "reps": 10,
+                "reps": 12,
                 "load": null,
                 "unit": "",
                 "note": "en amplitude maximale contrôlée"
@@ -888,7 +902,7 @@ export const TEMPLATES = [
       },
       {
         "id": "se-fb2",
-        "title": "FULL BODY B · MODÉRÉE",
+        "title": "FULL BODY B",
         "warmup": "5 min de rameur (ne te crame pas)",
         "exercises": [
           {
@@ -898,14 +912,14 @@ export const TEMPLATES = [
             "sets": [
               {
                 "count": 2,
-                "reps": 8,
+                "reps": 9,
                 "load": null,
                 "unit": "kg/main",
                 "note": "avec 2 secondes de descente"
               },
               {
                 "count": 2,
-                "reps": 10,
+                "reps": 12,
                 "load": null,
                 "unit": "kg/main",
                 "note": ""
@@ -919,8 +933,15 @@ export const TEMPLATES = [
             "img": "ill/lib/173.jpg",
             "sets": [
               {
-                "count": 3,
+                "count": 2,
                 "reps": 10,
+                "load": null,
+                "unit": "kg/main",
+                "note": "par jambe"
+              },
+              {
+                "count": 1,
+                "reps": 12,
                 "load": null,
                 "unit": "kg/main",
                 "note": "par jambe"
@@ -930,7 +951,7 @@ export const TEMPLATES = [
           },
           {
             "name": "TIRAGE VERTICAL PRISE SERRÉE NEUTRE",
-            "rest": "2 min",
+            "rest": "2 min 30",
             "img": "ill/lib/187.jpg",
             "sets": [
               {
@@ -942,7 +963,7 @@ export const TEMPLATES = [
               },
               {
                 "count": 1,
-                "reps": 12,
+                "reps": 13,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -964,7 +985,7 @@ export const TEMPLATES = [
               },
               {
                 "count": 1,
-                "reps": 12,
+                "reps": 13,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -978,18 +999,25 @@ export const TEMPLATES = [
             "img": "ill/lib/120.jpg",
             "sets": [
               {
-                "count": 3,
+                "count": 2,
                 "reps": 10,
                 "load": null,
                 "unit": "kg/main",
                 "note": "avec 1 seconde en haut"
+              },
+              {
+                "count": 1,
+                "reps": 12,
+                "load": null,
+                "unit": "kg/main",
+                "note": ""
               }
             ],
             "id": "ex-fb25"
           },
           {
             "name": "ÉLÉVATIONS LATÉRALES HALTÈRES",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/044.jpg",
             "sets": [
               {
@@ -1015,18 +1043,25 @@ export const TEMPLATES = [
             "img": "ill/lib/058.jpg",
             "sets": [
               {
-                "count": 3,
+                "count": 2,
                 "reps": 10,
                 "load": null,
                 "unit": "+kg",
-                "note": "au poids du corps (ajoute du lest si tu dépasses 12 répétitions)"
+                "note": "(ajoute du lest si tu dépasses 12 répétitions au poids du corps)"
+              },
+              {
+                "count": 1,
+                "reps": "max",
+                "load": null,
+                "unit": "",
+                "note": "au poids du corps"
               }
             ],
             "id": "ex-fb27"
           },
           {
             "name": "EXTENSION LOMBAIRE AU PUPITRE",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/164.jpg",
             "sets": [
               {
@@ -1043,39 +1078,46 @@ export const TEMPLATES = [
       },
       {
         "id": "se-fb3",
-        "title": "FULL BODY C · LÉGÈRE",
+        "title": "FULL BODY C",
         "warmup": "5 min de vélo (ne te crame pas)",
         "exercises": [
           {
             "name": "GOBLET SQUAT TALONS SURÉLEVÉS",
-            "rest": "1 min 30",
+            "rest": "2 min 30",
             "img": null,
             "sets": [
               {
-                "count": 3,
-                "reps": 15,
+                "count": 2,
+                "reps": 10,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 3 secondes de descente"
+              },
+              {
+                "count": 1,
+                "reps": 13,
+                "load": null,
+                "unit": "kg",
+                "note": ""
               }
             ],
             "id": "ex-fb31"
           },
           {
             "name": "HIP THRUST À LA BARRE",
-            "rest": "2 min",
+            "rest": "2 min 30",
             "img": "ill/lib/021.jpg",
             "sets": [
               {
                 "count": 2,
-                "reps": 12,
+                "reps": 10,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 1 seconde en haut"
               },
               {
                 "count": 1,
-                "reps": 15,
+                "reps": 12,
                 "load": null,
                 "unit": "kg",
                 "note": ""
@@ -1085,19 +1127,19 @@ export const TEMPLATES = [
           },
           {
             "name": "ÉCARTÉ COUCHÉ ENTRE LES POULIES",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/057.jpg",
             "sets": [
               {
                 "count": 2,
-                "reps": 15,
+                "reps": 10,
                 "load": null,
                 "unit": "kg/côté",
-                "note": ""
+                "note": "avec 1 seconde en position étirée"
               },
               {
                 "count": 1,
-                "reps": 15,
+                "reps": 12,
                 "load": null,
                 "unit": "kg/côté",
                 "note": "+ 6 répétitions partielles en position étirée"
@@ -1107,26 +1149,40 @@ export const TEMPLATES = [
           },
           {
             "name": "TIRAGE HORIZONTAL PRISE LARGE PRONATION",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/061.jpg",
             "sets": [
               {
-                "count": 3,
-                "reps": 15,
+                "count": 2,
+                "reps": 10,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 1 seconde de contraction"
+              },
+              {
+                "count": 1,
+                "reps": 13,
+                "load": null,
+                "unit": "kg",
+                "note": ""
               }
             ],
             "id": "ex-fb34"
           },
           {
             "name": "OISEAU AUX HALTÈRES",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/084.jpg",
             "sets": [
               {
-                "count": 3,
+                "count": 2,
+                "reps": 12,
+                "load": null,
+                "unit": "kg/main",
+                "note": "avec 1 seconde en haut"
+              },
+              {
+                "count": 1,
                 "reps": 15,
                 "load": null,
                 "unit": "kg/main",
@@ -1141,41 +1197,62 @@ export const TEMPLATES = [
             "img": "ill/lib/018.jpg",
             "sets": [
               {
-                "count": 3,
-                "reps": 12,
+                "count": 2,
+                "reps": 10,
                 "load": null,
                 "unit": "kg/main",
                 "note": "enchaîné sans repos avec l'exercice suivant (superset)"
+              },
+              {
+                "count": 1,
+                "reps": 12,
+                "load": null,
+                "unit": "kg/main",
+                "note": "en superset"
               }
             ],
             "id": "ex-fb36"
           },
           {
             "name": "KICK-BACK À LA POULIE",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/006.jpg",
             "sets": [
               {
-                "count": 3,
-                "reps": 15,
+                "count": 2,
+                "reps": 12,
                 "load": null,
                 "unit": "kg",
                 "note": "enchaîné directement après le curl"
+              },
+              {
+                "count": 1,
+                "reps": 14,
+                "load": null,
+                "unit": "kg",
+                "note": ""
               }
             ],
             "id": "ex-fb37"
           },
           {
             "name": "MOLLETS ASSIS",
-            "rest": "1 min 30",
+            "rest": "2 min",
             "img": "ill/lib/048.jpg",
             "sets": [
               {
-                "count": 4,
-                "reps": 15,
+                "count": 2,
+                "reps": 12,
                 "load": null,
                 "unit": "kg",
                 "note": "avec 1 seconde en bas"
+              },
+              {
+                "count": 2,
+                "reps": 15,
+                "load": null,
+                "unit": "kg",
+                "note": ""
               }
             ],
             "id": "ex-fb38"
