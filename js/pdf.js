@@ -61,7 +61,7 @@ export function pdfPages(w, c) {
     <div class="rem" style="margin-top:12px;font-size:15px"><u>Ton suivi</u> : note tes charges, tes répétitions et ton RIR directement dans l'appli après chaque série, puis envoie ton bilan en fin de semaine.</div>`);
   const pages = w.seances.map((se, si) => wrap(`<h1 class="pt">Séance ${si + 1} : ${esc(se.title)}</h1>
     ${se.warmup ? `<div class="warm">Échauffement : ${esc(se.warmup)}</div>` : ""}
-    <div class="goal">Objectif ${esc(ph.label)}</div>
+    <div class="goal">Objectif ${esc(ph.key === "calib" ? "RIR " + String(ph.target).replace(".", ",") + " · calibration" : ph.label)}</div>
     <div class="exs">${se.exercises.map((ex, ei) => {
       const img = imgSrc(ex.img);
       return `<div class="pex"><div class="pimg ${img ? "" : "none"}" style="${img ? `background-image:url('${img}')` : ""}"></div><div><div class="elbl">Exercice ${ei + 1}${ex.rest ? " - " + esc(ex.rest) + " de repos" : ""}</div><div class="ename">${esc(ex.name)}</div>${groupLines(ex).map((l) => `<div class="eline">${esc(l)}</div>`).join("")}</div></div>`;

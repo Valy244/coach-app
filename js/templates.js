@@ -720,4 +720,483 @@ export const TEMPLATES = [
       }
     ],
   },
+  {
+    id: "fullbody3",
+    name: "Full body 3 séances (lourde, modérée, légère)",
+    seances: [
+      {
+        "id": "se-fb1",
+        "title": "FULL BODY A · LOURDE",
+        "warmup": "5 min de rameur (ne te crame pas)",
+        "exercises": [
+          {
+            "name": "SQUAT LIBRE FULL AMPLITUDE",
+            "rest": "3 min",
+            "img": "ill/lib/086.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 6,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 2 secondes de descente"
+              },
+              {
+                "count": 2,
+                "reps": 8,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb11"
+          },
+          {
+            "name": "DÉVELOPPÉ COUCHÉ BARRE LIBRE",
+            "rest": "3 min",
+            "img": "ill/lib/091.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 6,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en bas"
+              },
+              {
+                "count": 2,
+                "reps": 8,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb12"
+          },
+          {
+            "name": "TRACTIONS PRONATION LESTÉES",
+            "rest": "2 min 30",
+            "img": "ill/lib/040.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 6,
+                "load": null,
+                "unit": "+kg",
+                "note": "(ajoute du lest si tu dépasses 8 répétitions au poids du corps)"
+              }
+            ],
+            "id": "ex-fb13"
+          },
+          {
+            "name": "SOULEVÉ DE TERRE ROUMAIN À LA BARRE",
+            "rest": "2 min 30",
+            "img": null,
+            "sets": [
+              {
+                "count": 3,
+                "reps": 8,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 3 secondes de descente, dos neutre"
+              }
+            ],
+            "id": "ex-fb14"
+          },
+          {
+            "name": "ROWING GUIDÉ POITRINE APPUYÉE",
+            "rest": "2 min 30",
+            "img": "ill/lib/188.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 8,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en haut"
+              },
+              {
+                "count": 1,
+                "reps": 10,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb15"
+          },
+          {
+            "name": "DÉVELOPPÉ MILITAIRE DEBOUT BARRE LIBRE",
+            "rest": "2 min 30",
+            "img": "ill/lib/050.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 6,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              },
+              {
+                "count": 1,
+                "reps": 8,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb16"
+          },
+          {
+            "name": "CURL BARRE EZ PRISE SUPINATION",
+            "rest": "2 min",
+            "img": "ill/lib/108.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 8,
+                "load": null,
+                "unit": "kg",
+                "note": "avec descente contrôlée"
+              },
+              {
+                "count": 1,
+                "reps": 10,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb17"
+          },
+          {
+            "name": "ROUE ABDOMINALE",
+            "rest": "2 min",
+            "img": "ill/lib/059.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 10,
+                "load": null,
+                "unit": "",
+                "note": "en amplitude maximale contrôlée"
+              }
+            ],
+            "id": "ex-fb18"
+          }
+        ]
+      },
+      {
+        "id": "se-fb2",
+        "title": "FULL BODY B · MODÉRÉE",
+        "warmup": "5 min de rameur (ne te crame pas)",
+        "exercises": [
+          {
+            "name": "DÉVELOPPÉ INCLINÉ HALTÈRES",
+            "rest": "2 min 30",
+            "img": "ill/lib/030.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 8,
+                "load": null,
+                "unit": "kg/main",
+                "note": "avec 2 secondes de descente"
+              },
+              {
+                "count": 2,
+                "reps": 10,
+                "load": null,
+                "unit": "kg/main",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb21"
+          },
+          {
+            "name": "FENTES MARCHÉES AUX HALTÈRES",
+            "rest": "2 min 30",
+            "img": "ill/lib/173.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 10,
+                "load": null,
+                "unit": "kg/main",
+                "note": "par jambe"
+              }
+            ],
+            "id": "ex-fb22"
+          },
+          {
+            "name": "TIRAGE VERTICAL PRISE SERRÉE NEUTRE",
+            "rest": "2 min",
+            "img": "ill/lib/187.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 10,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en bas"
+              },
+              {
+                "count": 1,
+                "reps": 12,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb23"
+          },
+          {
+            "name": "LEG CURL DEBOUT UNILATÉRAL",
+            "rest": "2 min",
+            "img": "ill/s3e4.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 10,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en haut"
+              },
+              {
+                "count": 1,
+                "reps": 12,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb24"
+          },
+          {
+            "name": "SEAL ROW HALTÈRES COUDES OUVERTS",
+            "rest": "2 min",
+            "img": "ill/lib/120.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 10,
+                "load": null,
+                "unit": "kg/main",
+                "note": "avec 1 seconde en haut"
+              }
+            ],
+            "id": "ex-fb25"
+          },
+          {
+            "name": "ÉLÉVATIONS LATÉRALES HALTÈRES",
+            "rest": "1 min 30",
+            "img": "ill/lib/044.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 12,
+                "load": null,
+                "unit": "kg/main",
+                "note": "avec 1 seconde en haut"
+              },
+              {
+                "count": 2,
+                "reps": 15,
+                "load": null,
+                "unit": "kg/main",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb26"
+          },
+          {
+            "name": "DIPS AUX BARRES PARALLÈLES",
+            "rest": "2 min",
+            "img": "ill/lib/058.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 10,
+                "load": null,
+                "unit": "+kg",
+                "note": "au poids du corps (ajoute du lest si tu dépasses 12 répétitions)"
+              }
+            ],
+            "id": "ex-fb27"
+          },
+          {
+            "name": "EXTENSION LOMBAIRE AU PUPITRE",
+            "rest": "1 min 30",
+            "img": "ill/lib/164.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 12,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en haut"
+              }
+            ],
+            "id": "ex-fb28"
+          }
+        ]
+      },
+      {
+        "id": "se-fb3",
+        "title": "FULL BODY C · LÉGÈRE",
+        "warmup": "5 min de vélo (ne te crame pas)",
+        "exercises": [
+          {
+            "name": "GOBLET SQUAT TALONS SURÉLEVÉS",
+            "rest": "1 min 30",
+            "img": null,
+            "sets": [
+              {
+                "count": 3,
+                "reps": 15,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 3 secondes de descente"
+              }
+            ],
+            "id": "ex-fb31"
+          },
+          {
+            "name": "HIP THRUST À LA BARRE",
+            "rest": "2 min",
+            "img": "ill/lib/021.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 12,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en haut"
+              },
+              {
+                "count": 1,
+                "reps": 15,
+                "load": null,
+                "unit": "kg",
+                "note": ""
+              }
+            ],
+            "id": "ex-fb32"
+          },
+          {
+            "name": "ÉCARTÉ COUCHÉ ENTRE LES POULIES",
+            "rest": "1 min 30",
+            "img": "ill/lib/057.jpg",
+            "sets": [
+              {
+                "count": 2,
+                "reps": 15,
+                "load": null,
+                "unit": "kg/côté",
+                "note": ""
+              },
+              {
+                "count": 1,
+                "reps": 15,
+                "load": null,
+                "unit": "kg/côté",
+                "note": "+ 6 répétitions partielles en position étirée"
+              }
+            ],
+            "id": "ex-fb33"
+          },
+          {
+            "name": "TIRAGE HORIZONTAL PRISE LARGE PRONATION",
+            "rest": "1 min 30",
+            "img": "ill/lib/061.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 15,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde de contraction"
+              }
+            ],
+            "id": "ex-fb34"
+          },
+          {
+            "name": "OISEAU AUX HALTÈRES",
+            "rest": "1 min 30",
+            "img": "ill/lib/084.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 15,
+                "load": null,
+                "unit": "kg/main",
+                "note": "en tension continue"
+              }
+            ],
+            "id": "ex-fb35"
+          },
+          {
+            "name": "CURL INCLINÉ HALTÈRES SUPINATION",
+            "rest": "",
+            "img": "ill/lib/018.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 12,
+                "load": null,
+                "unit": "kg/main",
+                "note": "enchaîné sans repos avec l'exercice suivant (superset)"
+              }
+            ],
+            "id": "ex-fb36"
+          },
+          {
+            "name": "KICK-BACK À LA POULIE",
+            "rest": "1 min 30",
+            "img": "ill/lib/006.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 15,
+                "load": null,
+                "unit": "kg",
+                "note": "enchaîné directement après le curl"
+              }
+            ],
+            "id": "ex-fb37"
+          },
+          {
+            "name": "MOLLETS ASSIS",
+            "rest": "1 min 30",
+            "img": "ill/lib/048.jpg",
+            "sets": [
+              {
+                "count": 4,
+                "reps": 15,
+                "load": null,
+                "unit": "kg",
+                "note": "avec 1 seconde en bas"
+              }
+            ],
+            "id": "ex-fb38"
+          },
+          {
+            "name": "PALLOF PRESS À LA POULIE",
+            "rest": "1 min 30",
+            "img": "ill/lib/116.jpg",
+            "sets": [
+              {
+                "count": 3,
+                "reps": 12,
+                "load": null,
+                "unit": "kg",
+                "note": "par côté"
+              }
+            ],
+            "id": "ex-fb39"
+          }
+        ]
+      }
+    ],
+  },
 ];
